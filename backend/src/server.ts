@@ -2,9 +2,13 @@ import http from "node:http";
 
 import { createExpressApplication } from "./modules/index.js";
 import { env } from "./common/env.js";
+import connectDb from "./common/config/db.js";
 
 async function main() {
     const { NODE_ENV, PORT } = env;
+
+    await connectDb();
+
     const app = createExpressApplication();
 
     const server = http.createServer(app);

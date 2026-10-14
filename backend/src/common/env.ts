@@ -4,7 +4,12 @@ import z from "zod";
 
 const EnvSchema = z.object({
     PORT: z.coerce.number().default(8080),
-    NODE_ENV: z.enum(["development", "production"])
+    NODE_ENV: z.enum(["development", "production"]),
+    MONGODB_CONNECTION_URI: z.url(),
+    GOOGLE_CLIENT_ID: z.string(),
+    GOOGLE__CLIENT_SECRET: z.string(),
+    GOOGLE_CALLBACK_URL: z.string(),
+    SESSION_SECRET: z.string()
 });
 
 function validateEnv() {

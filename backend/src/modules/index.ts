@@ -1,4 +1,6 @@
 import express from "express";
+import cors from "cors";
+import helmet from "helmet";
 
 import ApiError from "../common/api-error.js";
 
@@ -8,6 +10,8 @@ export function createExpressApplication(): Express {
     const app = express();
 
     app.use(express.json());
+    app.use(cors());
+    app.use(helmet());
 
     app.get("/health", (req, res) => res.json({
         healthy: true
