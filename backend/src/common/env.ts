@@ -7,7 +7,7 @@ const EnvSchema = z.object({
     NODE_ENV: z.enum(["development", "production"]),
     MONGODB_CONNECTION_URI: z.url(),
     GOOGLE_CLIENT_ID: z.string(),
-    GOOGLE__CLIENT_SECRET: z.string(),
+    GOOGLE_CLIENT_SECRET: z.string(),
     GOOGLE_CALLBACK_URL: z.string(),
     SESSION_SECRET: z.string()
 });
