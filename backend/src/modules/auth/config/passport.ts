@@ -39,7 +39,7 @@ passport.use(new GoogleStrategy({
             if (!user) {
                 user = await User.create({
                     googleId,
-                    name: profile.displayName,
+                    username: profile.displayName,
                     email,
                     ...(avatar ? { avatar }: {})
                 })
